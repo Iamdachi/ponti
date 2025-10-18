@@ -1,4 +1,4 @@
-**.idea/
+.idea/
 **pycache*
 .venv/
 **.py[cod]
