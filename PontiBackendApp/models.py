@@ -18,6 +18,7 @@ class Event(models.Model):
     datetime = models.CharField(max_length=100)  # Can change to DateTimeField if preferred
     created_by_user = models.ForeignKey(User, on_delete=models.CASCADE)
     event_image = models.CharField(max_length=255)  # Can also use ImageField if storing images
+    description = models.TextField(blank=True)  # New field
 
     def __str__(self):
         return self.name
