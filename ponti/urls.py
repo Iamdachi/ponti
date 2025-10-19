@@ -18,11 +18,11 @@ from django.contrib import admin
 from django.urls import path
 
 from PontiBackendApp.views import *
-from django.contrib.auth.views import LoginView
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/register/', UserRegistrationView.as_view()),
-    path('users/login/', LoginView.as_view())
+    path('users/login/', obtain_auth_token)
 ]
