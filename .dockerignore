@@ -1,0 +1,17 @@
+# .dockerignore
+# Python files
+*.pyc
+__pycache__/
+
+# Environments
+.venv/
+env/
+
+# Docker/Configuration files
+.git
+.gitignore
+.env
+
+# Database file
+db.sqlite3
+

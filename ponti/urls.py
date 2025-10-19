@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from PontiBackendApp.views import *
+from django.contrib.auth.views import LoginView
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/register/', UserRegistrationView.as_view()),
+    path('users/login/', LoginView.as_view())
 ]
