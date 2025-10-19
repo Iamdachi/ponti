@@ -22,3 +22,14 @@ class Event(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# models.py
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    age = models.IntegerField()
+    sex = models.CharField(max_length=10)
+    location = models.CharField(max_length=100)
+    personality_type = models.CharField(max_length=10)
+    preferred_personality_type = models.CharField(max_length=10)
+    hobbies = models.JSONField()
