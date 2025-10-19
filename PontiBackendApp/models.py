@@ -33,3 +33,9 @@ class UserProfile(models.Model):
     personality_type = models.CharField(max_length=10)
     preferred_personality_type = models.CharField(max_length=10)
     hobbies = models.JSONField()
+
+
+class UserEventPreference(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+

@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from .models import Event, Venue, UserProfile
+from .models import Event, Venue, UserProfile, UserEventPreference
 
 User = get_user_model()
 
@@ -75,3 +75,13 @@ class EventSerializer(serializers.ModelSerializer):
         venue, _ = Venue.objects.get_or_create(**venue_data)
         event = Event.objects.create(venue=venue, **validated_data)
         return event
+
+
+class UserEventPreferenceSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault()
+    )
+
+    class Meta:
+        model = UserEventPreference
+        fields = ['id', 'user', 'event']

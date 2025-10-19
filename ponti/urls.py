@@ -26,4 +26,5 @@ urlpatterns = [
     path('users/register/', UserRegistrationView.as_view()),
     path('users/login/', obtain_auth_token),
     path('events/', EventListView.as_view()),
+    path('events/like/', EventPreferenceView.as_view()),
 ]
