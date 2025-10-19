@@ -12,3 +12,4 @@ endpoint-tests/httpie-tests
 dummy_presentations/
 media/
 presentations/
+scripts.py
