@@ -6,7 +6,6 @@
 **.sqlite3
 **.env
 **/migrations/__pycache__/
-**/migrations/*.py
 endpoint-tests/endpoints
 endpoint-tests/httpie-tests
 dummy_presentations/
