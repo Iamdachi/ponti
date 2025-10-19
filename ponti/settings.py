@@ -25,8 +25,9 @@ SECRET_KEY = 'django-insecure-^+92wts&&&uz@%q!sdt*@rf79s7s7&r!n1mf^ak09vvd_pgl^k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = ["ponti-backend-712386917797.europe-west1.run.app", "*", "0.0.0.0"]
-
+ALLOWED_HOSTS = ["ponti-backend-712386917797.europe-west1.run.app", "0.0.0.0"]
+CSRF_TRUSTED_ORIGINS = ["https://ponti-backend-712386917797.europe-west1.run.app/", "https://*"]
+# CSRF_TRUSTED_ORIGINS = ["https://*"]
 
 # Application definition
 
@@ -133,5 +134,3 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
-
-ALLOWED_HOSTS = []
