@@ -3,8 +3,8 @@ from .models import Event, UserEventPreference
 from .serializers import EventSerializer, UserEventPreferenceSerializer
 
 from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from PontiBackendApp.serializers import UserRegistrationSerializer
+from rest_framework.permissions import AllowAny
+from PontiBackendApp.serializers import UserRegistrationSerializer, AIQuerySerializer
 
 class UserRegistrationView(CreateAPIView):
     serializer_class = UserRegistrationSerializer
@@ -24,3 +24,8 @@ class EventPreferenceView(generics.CreateAPIView):
 
     def get_queryset(self, *args, **kwargs):
         return UserEventPreference.objects.filter(user=self.request.user)
+
+
+class AIQueryView(generics.ListCreateAPIView):
+    serializer_class = AIQuerySerializer
+    permission_classes = [AllowAny]

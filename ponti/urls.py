@@ -27,4 +27,5 @@ urlpatterns = [
     path('users/login/', obtain_auth_token),
     path('events/', EventListView.as_view()),
     path('events/like/', EventPreferenceView.as_view()),
+    path('agent/', AIQueryView.as_view()),
 ]
